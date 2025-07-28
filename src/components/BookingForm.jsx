@@ -122,8 +122,8 @@ const BookingForm = ({ selectedPlan, selectedLocation, campType, onClose }) => {
     "1ADNOC5": 15,
     "Adnecstaff20@adss2025": 32.73,
     "20Kuwaiti": 22.08,
+    "POD50@ADSS2025": 50,
     "vipdis15": 15,
-
   };
 
   const handleApplyDiscount = () => {
