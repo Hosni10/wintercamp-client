@@ -233,10 +233,10 @@ function KidsCamp() {
     {
       image: fullImage,
       title: "Kids Camp",
-      subtitle: "Where Champions Are Made",
+      subtitle: "Where Kids Learn , Play & Thrive",
       description:
-        "Join our comprehensive summer program designed to develop young talents through sports, education, and fun activities.",
-      badge: "Winter 2025 Registration Open",
+        "Join our exciting Winter Camp - a program designed to engage kids through a dynamic mix of sports, teamwork, creativity, and fun-filled activities.",
+      badge: "Winter Camp 2025 Registration Open",
       buttonText: "Book Now",
       buttonAction: "book",
     },
@@ -410,17 +410,6 @@ function KidsCamp() {
                           (Friday ends at 1 PM)
                         </span>
                       </div>
-                      <div>
-                        <span className="font-medium text-gray-800">
-                          Al Ain:
-                        </span>
-                        <br />
-                        Monday to Thursday, 8:30 AM - 2 PM
-                        <br />
-                        <span className="text-sm text-gray-500">
-                          (No Friday sessions)
-                        </span>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -436,13 +425,6 @@ function KidsCamp() {
                         <br />
                         ADNEC, Abu Dhabi summer sports, Abu Dhabi
                       </div>
-                      <div>
-                        <span className="font-medium text-gray-800">
-                          Al Ain:
-                        </span>
-                        <br />
-                        ADNEC, Al Ain summer sports, Al Ain City
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -451,7 +433,7 @@ function KidsCamp() {
                   <div>
                     <h3 className="font-semibold">Age Groups</h3>
                     <p className="text-gray-600">
-                      Ages 4-14, grouped by age for optimal development
+                      Ages 3-14, grouped by age for optimal development
                     </p>
                   </div>
                 </div>
@@ -564,12 +546,12 @@ function KidsCamp() {
                 <li className="flex items-start space-x-2">
                   <Check className="h-5 w-5 text-[#ed3227] mt-1" />
                   <span>
-                    Over 4000 happy kids attended across different days
+                    Over 2000 happy kids attended across different days
                   </span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <Check className="h-5 w-5 text-[#ed3227] mt-1" />
-                  <span>Rated as 1 of Abu Dhabi's top summer camps</span>
+                  <span>Rated as 1 of Abu Dhabi's top winter camps</span>
                 </li>
                 <li className="flex items-start space-x-2">
                   <Check className="h-5 w-5 text-[#ed3227] mt-1" />
