@@ -392,7 +392,7 @@ function KidsCamp() {
             </div>
           </div>
 
-          <div className="text-center mt-12">
+          {/* <div className="text-center mt-12">
             <a
               href="/Camp%20Schedule.pdf"
               target="_blank"
@@ -401,7 +401,7 @@ function KidsCamp() {
             >
               View Schedule
             </a>
-          </div>
+          </div> */}
         </div>
       </section>
 
