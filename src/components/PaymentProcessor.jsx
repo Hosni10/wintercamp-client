@@ -390,7 +390,7 @@ const PaymentProcessor = ({ bookingData, onSuccess, onCancel, onError }) => {
       end.setDate(start.getDate() + 19);
       description = "20 days access within two weeks from start date";
     } else if (planName.toLowerCase().includes("full camp")) {
-      end = new Date("2025-08-21");
+      end = new Date("2026-01-02");
       description = "Full camp access (unlimited days)";
     } else {
       end = start;
