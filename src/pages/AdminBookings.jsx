@@ -263,7 +263,7 @@ function AdminBookings() {
                   </div>
                   <div>
                     <span className="font-medium">Location:</span>{" "}
-                    {booking.location === "abuDhabi" ? "Abu Dhabi" : "Al Ain"}
+                    Abu Dhabi
                   </div>
                   <div>
                     <span className="font-medium">Start Date:</span>{" "}

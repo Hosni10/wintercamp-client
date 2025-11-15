@@ -27,7 +27,7 @@ export const createPaymentIntent = async (amount, currency = "aed") => {
   try {
     console.log("Creating payment intent for amount:", amount);
     const serverUrl =
-      import.meta.env.VITE_SERVER_URL || "http://localhost:5000";
+      import.meta.env.VITE_SERVER_URL || "http://localhost:5173";
     const response = await fetch(`${serverUrl}/create-payment-intent`, {
       method: "POST",
       headers: {

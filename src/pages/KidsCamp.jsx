@@ -30,134 +30,56 @@ import coachImage from "../assets/coach.jpeg";
 import BookingForm from "../components/BookingForm.jsx";
 import { useNavigate } from "react-router-dom";
 
-const campPlans = {
-  abuDhabi: [
-    {
-      name: "1-Day Access",
-      description: "Perfect for trying out our summer camp",
-      price: "250",
-      features: ["Full day camp activities", "Professional supervision"],
-    },
-    {
-      name: "3-Days Access",
-      description: "Great for a short camp experience",
-      price: "650",
-      features: [
-        "Full day camp activities",
-        "Extended skill development",
-        "Progress tracking",
-      ],
-    },
-    {
-      name: "5-Days Access",
-      description: "Complete summer camp experience",
-      price: "850",
-      features: [
-        "Full day camp activities",
-        "Full week activities",
-        "Individual attention",
-      ],
-      popular: true,
-    },
-    {
-      name: "10-Days Access",
-      description: "Extended camp experience",
-      price: "1,600",
-      features: [
-        "Full day camp activities",
-        "Advanced activities",
-        "Special workshops",
-      ],
-    },
-    {
-      name: "20-Days Access",
-      description: "Full summer camp experience",
-      price: "3,000",
-      features: [
-        "Full day camp activities",
-        "Complete summer program",
-        "Exclusive activities",
-      ],
-    },
-    {
-      name: "Full Camp Access",
-      description: "Unlimited access to all camp days and activities",
-      price: "2,720",
-      features: [
-        "Full day camp activities",
-        "Unlimited access",
-        "Personalized coaching",
-      ],
-      popular: false,
-    },
-  ],
-  alAin: [
-    // {
-    //   name: "Test Plan (2 AED)",
-    //   description: "Test plan for debugging payment flow",
-    //   price: "2",
-    //   features: [
-    //     "Test payment only",
-    //     "For debugging only",
-    //     "Valid Monday to Thursday only",
-    //   ],
-    //   popular: false,
-    // },
-    {
-      name: "1-Day Access",
-      description: "1 day access within 1 week (Monday to Thursday)",
-      price: "150",
-      features: [
-        "Full day camp activities",
-        "Professional supervision",
-        "Valid Monday to Thursday only",
-      ],
-    },
-    {
-      name: "1 Week (4 Days Access)",
-      description: "4 days access within 1 week (Monday to Thursday)",
-      price: "440",
-      features: [
-        "Full day camp activities",
-        "Skill development",
-        "Valid Monday to Thursday only",
-      ],
-      popular: true,
-    },
-    {
-      name: "2 Weeks (8 Days Access)",
-      description: "8 days access within 2 weeks (Monday to Thursday)",
-      price: "880",
-      features: [
-        "Full day camp activities",
-        "Skill development",
-        "Valid Monday to Thursday only",
-      ],
-    },
-    {
-      name: "1 Month (16 Days Access)",
-      description:
-        "16 days access within 1 month (Monday to Thursday each week)",
-      price: "1760",
-      features: [
-        "Full day camp activities",
-        "Skill development",
-        "Valid Monday to Thursday only",
-      ],
-    },
-    {
-      name: "Full Camp (26 Days Access)",
-      description:
-        "26 days access for the full camp (Monday to Thursday each week)",
-      price: "2860",
-      features: [
-        "Full day camp activities",
-        "Skill development",
-        "Valid Monday to Thursday only",
-      ],
-    },
-  ],
-};
+const campPlans = [
+  {
+    name: "1-Day Access",
+    description: "Perfect for trying out our winter camp",
+    price: "250",
+    features: ["Full day camp activities", "Professional supervision" , "Multisports experience"],
+  },
+  {
+    name: "3-Days Access",
+    description: "Great for a short camp experience",
+    price: "650",
+    features: [
+      "Multi-sports sessions",
+      "Fun challenges & mini competitions",
+      "Safe and active environment",
+    ],
+  },
+  {
+    name: "5-Days Access",
+    description: "Complete winter camp experience",
+    price: "850",
+    features: [
+      "Full day camp activities",
+      "Full week activities",
+      "Individual attention",
+    ],
+    popular: true,
+  },
+  {
+    name: "10-Days Access",
+    description: "Extended camp experience",
+    price: "1,600",
+    features: [
+      "Full day camp activities",
+      "Advanced activities",
+      "Special workshops",
+    ],
+  },
+  {
+    name: "Full Camp Access",
+    description: "Unlimited access to all camp days and activities",
+    price: "2,560",
+    features: [
+      "Full day camp activities",
+      "Unlimited access",
+      "Personalized coaching",
+    ],
+    popular: false,
+  },
+];
 
 const campActivities = {
   sports: [
@@ -172,7 +94,6 @@ const campActivities = {
     "Badminton",
     "Track & Field",
     "Olympic Challenges",
-    "Cycling",
     "Art",
     "Board Games & more",
   ],
@@ -224,7 +145,6 @@ function ImageModal({ src, alt, open, onClose }) {
 function KidsCamp() {
   const [showBookingForm, setShowBookingForm] = useState(false);
   const [selectedPlan, setSelectedPlan] = useState(null);
-  const [selectedLocation, setSelectedLocation] = useState("abuDhabi");
   const [modalImg, setModalImg] = useState(null);
   const [currentSlide, setCurrentSlide] = useState(0);
   const navigate = useNavigate();
@@ -533,7 +453,7 @@ function KidsCamp() {
               Last Year's Success
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              See what our campers achieved in the previous summer
+              See what our campers achieved in the previous winter
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -585,40 +505,12 @@ function KidsCamp() {
               Choose Your Membership
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Select the perfect plan for your child's summer camp experience
+              Select the perfect plan for your child's winter camp experience
             </p>
           </div>
 
-          {/* Location Selection */}
-          <div className="flex justify-center mb-8">
-            <div className="flex bg-gray-100 rounded-lg p-1">
-              <button
-                className={`px-6 py-3 rounded-md font-medium transition-colors ${
-                  selectedLocation === "abuDhabi"
-                    ? "bg-[#ed3227] text-white"
-                    : "text-gray-600 hover:text-gray-900"
-                }`}
-                onClick={() => setSelectedLocation("abuDhabi")}
-              >
-                <MapPin className="h-4 w-4 inline mr-2" />
-                Abu Dhabi
-              </button>
-              <button
-                className={`px-6 py-3 rounded-md font-medium transition-colors ${
-                  selectedLocation === "alAin"
-                    ? "bg-[#ed3227] text-white"
-                    : "text-gray-600 hover:text-gray-900"
-                }`}
-                onClick={() => setSelectedLocation("alAin")}
-              >
-                <MapPin className="h-4 w-4 inline mr-2" />
-                Al Ain
-              </button>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {campPlans[selectedLocation].map((plan, index) => (
+            {campPlans.map((plan, index) => (
               <Card
                 key={index}
                 className={`relative flex flex-col h-full overflow-hidden ${
@@ -706,7 +598,7 @@ function KidsCamp() {
       {showBookingForm && selectedPlan && (
         <BookingForm
           selectedPlan={selectedPlan}
-          selectedLocation={selectedLocation}
+          selectedLocation="abuDhabi"
           campType="kidsCamp"
           onClose={() => setShowBookingForm(false)}
         />

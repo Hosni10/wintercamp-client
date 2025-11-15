@@ -369,62 +369,32 @@ const PaymentProcessor = ({ bookingData, onSuccess, onCancel, onError }) => {
     let end;
     let description = "";
 
-    // Al Ain plans (Monday to Thursday)
-    if (location === "alAin") {
-      if (planName.toLowerCase().includes("1-day")) {
-        end = start;
-        description = "1 day access (Monday to Thursday only)";
-      } else if (planName.toLowerCase().includes("1 week")) {
-        end = new Date(start);
-        end.setDate(start.getDate() + 3); // 4 days: Mon-Thu
-        description = "4 days access within 1 week (Monday to Thursday)";
-      } else if (planName.toLowerCase().includes("2 weeks")) {
-        end = new Date(start);
-        end.setDate(start.getDate() + 7); // 8 days: 2x Mon-Thu
-        description = "8 days access within 2 weeks (Monday to Thursday)";
-      } else if (planName.toLowerCase().includes("1 month")) {
-        end = new Date(start);
-        end.setDate(start.getDate() + 15); // 16 days: 4x Mon-Thu
-        description =
-          "16 days access within 1 month (Monday to Thursday each week)";
-      } else if (planName.toLowerCase().includes("full camp")) {
-        end = new Date(start);
-        end.setDate(start.getDate() + 25); // 26 days: 6.5x Mon-Thu
-        description =
-          "26 days access for the full camp (Monday to Thursday each week)";
-      } else {
-        end = start;
-        description =
-          "Access period based on selected plan (Monday to Thursday)";
-      }
+    // Abu Dhabi plans (Monday to Friday)
+    if (planName.toLowerCase().includes("1-day")) {
+      end = start;
+      description = "1 day access (Monday to Friday only)";
+    } else if (planName.toLowerCase().includes("3-day")) {
+      end = new Date(start);
+      end.setDate(start.getDate() + 2);
+      description = "3 days access within one week (Monday to Friday only)";
+    } else if (planName.toLowerCase().includes("5-day")) {
+      end = new Date(start);
+      end.setDate(start.getDate() + 4);
+      description = "5 days access within one week (Monday to Friday only)";
+    } else if (planName.toLowerCase().includes("10-day")) {
+      end = new Date(start);
+      end.setDate(start.getDate() + 9);
+      description = "10 days access within two weeks";
+    } else if (planName.toLowerCase().includes("20-day")) {
+      end = new Date(start);
+      end.setDate(start.getDate() + 19);
+      description = "20 days access within two weeks from start date";
+    } else if (planName.toLowerCase().includes("full camp")) {
+      end = new Date("2025-08-21");
+      description = "Full camp access (unlimited days)";
     } else {
-      // Abu Dhabi and fallback (Monday to Friday)
-      if (planName.toLowerCase().includes("1-day")) {
-        end = start;
-        description = "1 day access (Monday to Friday only)";
-      } else if (planName.toLowerCase().includes("3-day")) {
-        end = new Date(start);
-        end.setDate(start.getDate() + 2);
-        description = "3 days access within one week (Monday to Friday only)";
-      } else if (planName.toLowerCase().includes("5-day")) {
-        end = new Date(start);
-        end.setDate(start.getDate() + 4);
-        description = "5 days access within one week (Monday to Friday only)";
-      } else if (planName.toLowerCase().includes("10-day")) {
-        end = new Date(start);
-        end.setDate(start.getDate() + 9);
-        description = "10 days access within two weeks";
-      } else if (planName.toLowerCase().includes("20-day")) {
-        end = new Date(start);
-        end.setDate(start.getDate() + 19);
-        description = "20 days access within two weeks from start date";
-      } else if (planName.toLowerCase().includes("full camp")) {
-        end = new Date("2025-08-21");
-        description = "Full camp access (unlimited days)";
-      } else {
-        end = start;
-        description = "Access period based on selected plan";
-      }
+      end = start;
+      description = "Access period based on selected plan";
     }
 
     // Validate end date
@@ -483,9 +453,7 @@ const PaymentProcessor = ({ bookingData, onSuccess, onCancel, onError }) => {
               </div>
               <div className="flex justify-between">
                 <span>Location:</span>
-                <span className="font-medium">
-                  {bookingData.location === "alAin" ? "Al Ain" : "Abu Dhabi"}
-                </span>
+                <span className="font-medium">Abu Dhabi</span>
               </div>
               {/* Duration */}
               {(() => {

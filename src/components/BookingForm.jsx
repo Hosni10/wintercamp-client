@@ -45,18 +45,14 @@ const BookingForm = ({ selectedPlan, selectedLocation, campType, onClose }) => {
   const [showPayment, setShowPayment] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // Set default start date based on plan description and location
+  // Set default start date based on plan description
   useEffect(() => {
     if (selectedPlan) {
-      if (selectedLocation === "alAin") {
-        setFormData((prev) => ({ ...prev, startDate: "2025-07-07" }));
-      } else {
-        const isCamp = selectedPlan.description?.toLowerCase().includes("camp");
-        const defaultStartDate = isCamp ? "2025-07-01" : "2025-07-07";
-        setFormData((prev) => ({ ...prev, startDate: defaultStartDate }));
-      }
+      const isCamp = selectedPlan.description?.toLowerCase().includes("camp");
+      const defaultStartDate = isCamp ? "2025-07-01" : "2025-07-07";
+      setFormData((prev) => ({ ...prev, startDate: defaultStartDate }));
     }
-  }, [selectedPlan, selectedLocation]);
+  }, [selectedPlan]);
 
   // Function to calculate age from date of birth
   const calculateAge = (dateOfBirth) => {
@@ -85,7 +81,7 @@ const BookingForm = ({ selectedPlan, selectedLocation, campType, onClose }) => {
       if (age < 4) return "Child must be at least 4 years old";
       if (age > 19) return "Child must be 19 years old or younger";
     } else {
-      if (age < 4) return "Child must be at least 4 years old";
+      if (age < 3) return "Child must be at least 3 years old";
       if (age > 14) return "Child must be 14 years old or younger";
     }
     return null;
@@ -447,12 +443,12 @@ const BookingForm = ({ selectedPlan, selectedLocation, campType, onClose }) => {
       console.log(
         "API URL:",
         `${
-          import.meta.env.VITE_SERVER_URL || "http://localhost:5000"
+          import.meta.env.VITE_SERVER_URL || "http://localhost:5173"
         }/api/bookings`
       );
       const response = await fetch(
         `${
-          import.meta.env.VITE_SERVER_URL || "http://localhost:5000"
+          import.meta.env.VITE_SERVER_URL || "http://localhost:5173"
         }/api/bookings`,
         {
           method: "POST",
@@ -560,12 +556,8 @@ const BookingForm = ({ selectedPlan, selectedLocation, campType, onClose }) => {
               <p className="text-gray-600 mt-1">
                 {selectedPlan?.name?.toLowerCase().includes("football") ||
                 selectedPlan?.description?.toLowerCase().includes("football")
-                  ? `${
-                      selectedLocation === "alAin" ? "Al Ain" : "Abu Dhabi"
-                    } - Full day access to Football Clinic`
-                  : `${
-                      selectedLocation === "alAin" ? "Al Ain" : "Abu Dhabi"
-                    } - Full day access to Kids Camp`}
+                  ? "Abu Dhabi - Full day access to Football Clinic"
+                  : "Abu Dhabi - Full day access to Kids Camp"}
               </p>
             </div>
             <Button variant="ghost" size="icon" onClick={onClose}>
@@ -581,12 +573,8 @@ const BookingForm = ({ selectedPlan, selectedLocation, campType, onClose }) => {
                 <p className="text-gray-600">
                   {selectedPlan?.name?.toLowerCase().includes("football") ||
                   selectedPlan?.description?.toLowerCase().includes("football")
-                    ? `Full day access to Football Clinic - ${
-                        selectedLocation === "alAin" ? "Al Ain" : "Abu Dhabi"
-                      }`
-                    : `Full day access to Kids Camp - ${
-                        selectedLocation === "alAin" ? "Al Ain" : "Abu Dhabi"
-                      }`}
+                    ? "Full day access to Football Clinic - Abu Dhabi"
+                    : "Full day access to Kids Camp - Abu Dhabi"}
                 </p>
               </div>
               <div className="text-right">
