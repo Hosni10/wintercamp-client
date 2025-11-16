@@ -20,7 +20,6 @@ import {
 } from "./ui/card.jsx";
 import { Badge } from "./ui/badge.jsx";
 import { CreditCard, Lock, AlertCircle, X } from "lucide-react";
-import { loadStripe } from "@stripe/stripe-js";
 import { format, addDays } from "date-fns";
 
 // Stripe Elements styling
@@ -319,26 +318,12 @@ const PaymentForm = ({ bookingData, onSuccess, onError, onCancel }) => {
 
 // Main Payment Processor Component
 const PaymentProcessor = ({ bookingData, onSuccess, onCancel, onError }) => {
-  const [stripePromise, setStripePromise] = useState(null);
-
   console.log("PaymentProcessor rendered with props:", {
     hasBookingData: !!bookingData,
     onSuccessType: typeof onSuccess,
     onCancelType: typeof onCancel,
     onErrorType: typeof onError,
   });
-
-  useEffect(() => {
-    // Initialize Stripe
-    const initStripe = async () => {
-      const stripe = await loadStripe(
-        import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
-      );
-      console.log("Stripe initialized:", !!stripe);
-      setStripePromise(stripe);
-    };
-    initStripe();
-  }, []);
 
   const handlePaymentSuccess = (result) => {
     // Just call the parent's onSuccess callback - let the parent handle everything
@@ -508,16 +493,14 @@ const PaymentProcessor = ({ bookingData, onSuccess, onCancel, onError }) => {
           </div>
 
           {/* Stripe Elements Payment Form */}
-          {stripePromise && (
-            <Elements stripe={stripePromise}>
-              <PaymentForm
-                bookingData={bookingData}
-                onSuccess={handlePaymentSuccess}
-                onError={handlePaymentError}
-                onCancel={onCancel}
-              />
-            </Elements>
-          )}
+          <Elements stripe={stripePromise}>
+            <PaymentForm
+              bookingData={bookingData}
+              onSuccess={handlePaymentSuccess}
+              onError={handlePaymentError}
+              onCancel={onCancel}
+            />
+          </Elements>
         </CardContent>
       </Card>
     </div>
