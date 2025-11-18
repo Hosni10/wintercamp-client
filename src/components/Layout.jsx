@@ -66,7 +66,7 @@ export default function Layout({ children }) {
               <MapPin className="h-8 w-8 text-orange-600" />
               <h3 className="font-semibold">Visit Us</h3>
               <p className="text-gray-600">
-                ADNEC, Abu Dhabi Summer Sports, UAE
+                Active Al Maryah Island Sports & Recreation , Abu Dhabi
               </p>
             </div>
           </div>
@@ -110,7 +110,7 @@ export default function Layout({ children }) {
               <ul className="space-y-2 text-gray-400">
                 <li>Email: info@atomicsfootball.com</li>
                 <li>Phone: +971 50 333 1468</li>
-                <li>Location: Abu Dhabi, UAE</li>
+                <li>Location: Active Al Maryah Island Sports & Recreation , Abu Dhabi</li>
               </ul>
             </div>
           </div>

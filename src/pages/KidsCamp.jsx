@@ -343,7 +343,7 @@ function KidsCamp() {
                           Abu Dhabi:
                         </span>
                         <br />
-                        ADNEC, Abu Dhabi summer sports, Abu Dhabi
+                        Active Al Maryah Island Sports & Recreation , Abu Dhabi
                       </div>
                     </div>
                   </div>

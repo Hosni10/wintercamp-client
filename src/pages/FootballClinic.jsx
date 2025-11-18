@@ -234,7 +234,7 @@ function FootballClinic() {
                   <div>
                     <h3 className="font-semibold">Location</h3>
                     <p className="text-gray-600">
-                      ADNEC, Abu Dhabi summer sports, Abu Dhabi
+                      Active Al Maryah Island Sports & Recreation , Abu Dhabi
                     </p>
                   </div>
                 </div>

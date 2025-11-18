@@ -82,7 +82,7 @@ To build for production: `pnpm run build`
 The website includes UAE-specific contact information:
 - Phone: +971 50 333 1468
 - Email: info@sportscamp-uae.com
-- Location: Dubai Sports City, UAE
+- Location: Active Al Maryah Island Sports & Recreation , Abu Dhabi
 
 The website is fully functional and ready for deployment whenever you're ready!
 
