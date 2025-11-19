@@ -34,7 +34,7 @@ const campPlans = [
   {
     name: "1-Day Access",
     description: "Perfect for trying out our winter camp",
-    price: "3",
+    price: "250",
     features: ["Full day camp activities", "Professional supervision" , "Multisports experience"],
   },
   {
