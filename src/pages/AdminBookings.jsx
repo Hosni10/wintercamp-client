@@ -149,7 +149,7 @@ function AdminBookings() {
                 Bookings Management
               </h1>
               <p className="text-gray-600 mt-2">
-                View and export all summer camp bookings
+                View and export all winter camp bookings
               </p>
             </div>
             <div className="flex gap-4">
