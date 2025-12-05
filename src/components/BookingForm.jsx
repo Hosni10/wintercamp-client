@@ -49,7 +49,7 @@ const BookingForm = ({ selectedPlan, selectedLocation, campType, onClose }) => {
   useEffect(() => {
     if (selectedPlan) {
       const isCamp = selectedPlan.description?.toLowerCase().includes("camp");
-      const defaultStartDate = isCamp ? "2025-12-10" : "2025-12-10";
+      const defaultStartDate = isCamp ? "2025-12-08" : "2025-12-08";
       setFormData((prev) => ({ ...prev, startDate: defaultStartDate }));
     }
   }, [selectedPlan]);
@@ -836,8 +836,8 @@ const BookingForm = ({ selectedPlan, selectedLocation, campType, onClose }) => {
                     type="date"
                     min={
                       selectedPlan?.description?.toLowerCase().includes("camp")
-                        ? "2025-12-10"
-                        : "2025-12-10"
+                        ? "2025-12-08"
+                        : "2025-12-08"
                     }
                     max="2026-01-02"
                     value={formData.startDate}

@@ -184,7 +184,7 @@ function FootballClinic() {
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-4 py-2 rounded-lg">
                 <Calendar className="h-5 w-5" />
                 <span className="font-medium">
-                  December 10th, 2025 - January 2nd, 2026
+                  December 8th, 2025 - January 2nd, 2026
                 </span>
               </div>
             </div>

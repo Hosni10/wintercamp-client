@@ -23,7 +23,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import activitiesImage from "../assets/activities.jpeg";
-import detailsImage from "../assets/full-new.jpeg";
+import detailsImage from "../assets/full-new.jpg";
 import lastYearImage from "../assets/last-year-new.jpeg";
 import fullImage from "../assets/kids-camp.jpeg";
 import coachImage from "../assets/coach.jpeg";
