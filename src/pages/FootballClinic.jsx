@@ -19,10 +19,9 @@ import {
   MapPin,
   X,
 } from "lucide-react";
-import footballClinicImage from "../assets/football-clinic.jpeg";
+import footballClinicImage from "../assets/football-clinic.jpg";
 import kidsImage from "../assets/football-clinic-kid.jpeg";
 
-import coachImage from "../assets/coach.jpeg";
 import backgroundImage from "../assets/background.jpeg";
 import BookingForm from "../components/BookingForm.jsx";
 
@@ -31,7 +30,7 @@ const clinicPlans = {
     {
       name: "1 Day Access",
       description: "Perfect for trying out our football clinic",
-      price: "150",
+      price: "200",
       features: [
         "Professional coaching",
         "Skill assessment",
@@ -51,25 +50,14 @@ const clinicPlans = {
       popular: true,
     },
     {
-      name: "Full Month (12 sessions)",
+      name: "5 Days Access",
       description: "Complete football development experience",
-      price: "1440",
+      price: "600",
       features: [
         "Professional coaching",
         "Match play experience",
         "Progress tracking",
         "Performance report",
-      ],
-    },
-    {
-      name: "Full Access (21 sessions)",
-      description: "Ultimate football training experience",
-      price: "2520",
-      features: [
-        "Professional coaching",
-        "Extended training period",
-        "Comprehensive skill development",
-        "Advanced tactical understanding",
       ],
     },
   ],
@@ -83,10 +71,10 @@ const clinicActivities = {
     "Mental Preparation",
   ],
   schedule: {
-    "U17 & U18": "3:00 PM – 5:00 PM",
-    "U6, U8 , U10 & Girls Clinic": "5:00 PM – 6:15 PM",
-    "U12 & U13": "6:15 PM – 7:40 PM",
-    "U14 & U15": "7:30 PM – 9:00 PM",
+    "U15 & U16 & U17": "11:30 AM – 2:00 PM",
+    // "U6, U8 , U10 & Girls Clinic": "5:00 PM – 6:15 PM",
+    "U12 & U13 & U14": "9:00 AM – 11:30 AM",
+    // "U14 & U15": "7:30 PM – 9:00 PM",
   },
   skillsDevelopment: [
     "Ball control and dribbling",
@@ -219,9 +207,9 @@ function FootballClinic() {
                   <div>
                     <h3 className="font-semibold">Schedule</h3>
                     <p className="text-gray-600">
-                      Monday, Tuesday & Thursday
+                      Monday to Friday 
                       <br />
-                      3:00 PM - 9:00 PM
+                      9:00 AM - 2:00 PM
                       <br />
                       <span className="text-sm text-gray-500">
                         (Check specific timing for each age group below)
@@ -243,7 +231,7 @@ function FootballClinic() {
                   <div>
                     <h3 className="font-semibold">Age Groups</h3>
                     <p className="text-gray-600">
-                      Ages 4-19 years old, grouped by age for optimal
+                      U 11 - U 18 years old, grouped by age for optimal
                       development
                     </p>
                   </div>
@@ -261,20 +249,22 @@ function FootballClinic() {
 
               </div>
             </div>
-            <div
-              className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer"
-              onClick={() =>
-                setModalImg({
-                  src: footballClinicImage,
-                  alt: "Football Training",
-                })
-              }
-            >
-              <img
-                src={footballClinicImage}
-                alt="Football Training"
-                className="w-full h-[400px] object-cover hover:opacity-80 transition-opacity"
-              />
+            <div className="flex justify-center">
+              <div
+                className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gray-100 inline-flex items-center justify-center"
+                onClick={() =>
+                  setModalImg({
+                    src: footballClinicImage,
+                    alt: "Football Training",
+                  })
+                }
+              >
+                <img
+                  src={footballClinicImage}
+                  alt="Football Training"
+                  className="max-w-full h-[550px] w-auto object-contain hover:opacity-80 transition-opacity"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -293,20 +283,22 @@ function FootballClinic() {
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div
-              className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer"
-              onClick={() =>
-                setModalImg({
-                  src: kidsImage,
-                  alt: "Football Training",
-                })
-              }
-            >
-              <img
-                src={kidsImage}
-                alt="Football Training"
-                className="w-full h-[400px] object-cover hover:opacity-80 transition-opacity"
-              />
+            <div className="flex justify-center">
+              <div
+                className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gray-100 inline-flex items-center justify-center"
+                onClick={() =>
+                  setModalImg({
+                    src: kidsImage,
+                    alt: "Football Training",
+                  })
+                }
+              >
+                <img
+                  src={kidsImage}
+                  alt="Football Training"
+                  className="max-w-full h-[550px] w-auto object-contain hover:opacity-80 transition-opacity"
+                />
+              </div>
             </div>
             <div className="space-y-6">
               <div>
@@ -350,7 +342,7 @@ function FootballClinic() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
             {Object.entries(clinicActivities.schedule).map(
               ([ageGroup, time], index) => (
                 <Card
@@ -362,7 +354,7 @@ function FootballClinic() {
                     <CardTitle className="text-lg">{ageGroup}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-[#ed3227] font-semibold">{time}</p>
+                    <p className="text-[#ed3227] font-semibold text-lg">{time}</p>
                   </CardContent>
                 </Card>
               )
@@ -396,7 +388,7 @@ function FootballClinic() {
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {clinicPlans.abuDhabi.map((plan, index) => (
               <Card
                 key={index}

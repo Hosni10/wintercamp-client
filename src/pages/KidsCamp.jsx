@@ -378,17 +378,19 @@ function KidsCamp() {
                 </div>
               </div>
             </div>
-            <div
-              className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer"
-              onClick={() =>
-                setModalImg({ src: detailsImage, alt: "Camp Details" })
-              }
-            >
-              <img
-                src={detailsImage}
-                alt="Camp Details"
-                className="w-full h-[400px] object-cover hover:opacity-80 transition-opacity"
-              />
+            <div className="flex justify-center">
+              <div
+                className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gray-100 inline-flex items-center justify-center"
+                onClick={() =>
+                  setModalImg({ src: detailsImage, alt: "Camp Details" })
+                }
+              >
+                <img
+                  src={detailsImage}
+                  alt="Camp Details"
+                  className="max-w-full h-[550px] w-auto object-contain hover:opacity-80 transition-opacity"
+                />
+              </div>
             </div>
           </div>
 
@@ -419,17 +421,19 @@ function KidsCamp() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div
-              className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer"
-              onClick={() =>
-                setModalImg({ src: activitiesImage, alt: "Camp Activities" })
-              }
-            >
-              <img
-                src={activitiesImage}
-                alt="Camp Activities"
-                className="w-full h-[400px] object-cover hover:opacity-80 transition-opacity"
-              />
+            <div className="flex justify-center">
+              <div
+                className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gray-100 inline-flex items-center justify-center"
+                onClick={() =>
+                  setModalImg({ src: activitiesImage, alt: "Camp Activities" })
+                }
+              >
+                <img
+                  src={activitiesImage}
+                  alt="Camp Activities"
+                  className="max-w-full h-[550px] w-auto object-contain hover:opacity-80 transition-opacity"
+                />
+              </div>
             </div>
             <div className="space-y-6">
               <div className="grid grid-cols-2 gap-4">
@@ -481,17 +485,19 @@ function KidsCamp() {
                 </li>
               </ul>
             </div>
-            <div
-              className="relative rounded-lg overflow-hidden shadow-lg order-1 md:order-2 cursor-pointer"
-              onClick={() =>
-                setModalImg({ src: lastYearImage, alt: "Last Year's Success" })
-              }
-            >
-              <img
-                src={lastYearImage}
-                alt="Last Year's Success"
-                className="w-full h-[400px] object-cover hover:opacity-80 transition-opacity"
-              />
+            <div className="flex justify-center order-1 md:order-2">
+              <div
+                className="relative rounded-lg overflow-hidden shadow-lg cursor-pointer bg-gray-100 inline-flex items-center justify-center"
+                onClick={() =>
+                  setModalImg({ src: lastYearImage, alt: "Last Year's Success" })
+                }
+              >
+                <img
+                  src={lastYearImage}
+                  alt="Last Year's Success"
+                  className="max-w-full h-[550px] w-auto object-contain hover:opacity-80 transition-opacity"
+                />
+              </div>
             </div>
           </div>
         </div>
